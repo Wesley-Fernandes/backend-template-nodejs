@@ -1,7 +1,7 @@
-import { Request, Response } from "express";
-import { userSchema, userLoginSchema } from "../schema/user";
-import { decript, encript, genToken } from "../utils/criptografy";
-import database from "../config/database";
+import { Request, Response } from 'express';
+import { userSchema, userLoginSchema } from '../schema/user';
+import { decript, encript, genToken } from '../utils/criptografy';
+import database from '../config/database';
 
 export class Auth {
   async create(req: Request, res: Response) {
@@ -16,7 +16,7 @@ export class Auth {
       },
     });
 
-    return res.status(201).json({ message: "Account has been created." });
+    return res.status(201).json({ message: 'Account has been created.' });
   }
 
   async login(req: Request, res: Response) {
@@ -27,14 +27,14 @@ export class Auth {
         select: { id: true, password: true },
       });
       if (!found)
-        return res.status(404).json({ message: "Usuário não existe." });
+        return res.status(404).json({ message: 'Usuário não existe.' });
       if (decript(user.password, found.password)) {
-        res.setHeader("authorization", genToken(found.id));
-        return res.status(200).json({ message: "Login efetuado com sucesso." });
+        res.setHeader('authorization', genToken(found.id));
+        return res.status(200).json({ message: 'Login efetuado com sucesso.' });
       }
-      return res.status(404).json({ message: "Dados invalidos." });
+      return res.status(404).json({ message: 'Dados invalidos.' });
     } catch (error) {
-      return res.status(500).json({ message: "Erro interno do servidor." });
+      return res.status(500).json({ message: 'Erro interno do servidor.' });
     }
   }
 }

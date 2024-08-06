@@ -98,6 +98,14 @@ Para formatar os arquivos alterados em tempo real usando Prettier, utilize o com
 npm run prettier
 ```
 
+## Formatar todos arquivos
+
+Para formatar os arquivos alterados em tempo real usando Prettier, utilize o comando:
+
+```bash
+npm run format
+```
+
 ## Contribuição
 
 Se deseja contribuir com este projeto, siga os passos abaixo:
@@ -107,4 +115,3 @@ Se deseja contribuir com este projeto, siga os passos abaixo:
 3. Faça commit das suas alterações (`git commit -am 'Adiciona nova feature'`).
 4. Faça push para a branch (`git push origin feature/nova-feature`).
 5. Abra um Pull Request.
-

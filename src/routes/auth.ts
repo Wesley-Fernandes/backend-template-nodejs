@@ -1,5 +1,5 @@
-import type { Router } from "express";
-import controllers from "../controllers";
+import type { Router } from 'express';
+import controllers from '../controllers';
 
 export class AuthRoutes {
   public route: Router;
@@ -7,7 +7,7 @@ export class AuthRoutes {
 
   constructor(router: Router) {
     this.route = router;
-    this.route.post("/register", this.auth.create);
-    this.route.post("/login", this.auth.login);
+    this.route.post('/register', this.auth.create);
+    this.route.post('/login', this.auth.login);
   }
 }

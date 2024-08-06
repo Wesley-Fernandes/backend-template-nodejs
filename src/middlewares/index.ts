@@ -1,4 +1,4 @@
-import { isAuthenticated } from "./is-authenticated";
-import { errors } from "./errors";
+import { isAuthenticated } from './is-authenticated';
+import { errors } from './errors';
 
 export { isAuthenticated, errors };
